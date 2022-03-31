@@ -1,6 +1,5 @@
-import {Schema, model, models} from 'mongoose';
-import mongoose from 'mongoose';
-console.log(mongoose);
+const mongoose = require('mongoose');
+const {Schema, model} = mongoose;
 
 const roomSchema = new Schema({
     name: {
@@ -116,4 +115,4 @@ const roomSchema = new Schema({
 })
 
 
-export default models.Rooms || model('Rooms', roomSchema);
+module.exports = mongoose.models.Rooms || model('Rooms', roomSchema);
